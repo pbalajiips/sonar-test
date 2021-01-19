@@ -19,13 +19,6 @@ pipeline:
   #     - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
 
 
-  sonar:
-    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
-    project_key: sonar:pythontest
-    sources_directory: python2.7
-    environment:
-      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
-
   sonar_cs:
     image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin
     project_key: sonar:cstest
@@ -41,3 +34,10 @@ pipeline:
     environment:
       - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
     secrets: [ sonar_token ]
+  
+  sonar:
+    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
+    project_key: sonar:pythontest
+    sources_directory: python2.7
+    environment:
+      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
