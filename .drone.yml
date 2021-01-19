@@ -1,4 +1,16 @@
 pipeline:
+  Build:
+    image: alpine:latest
+    commands:
+      - echo "Test Message from agent"
+
+  Publish:
+    image: alpine:latest
+    commands:
+      - echo "Show env vars"
+      - env
+    secrets: [ docker_username, my_test, gold ]
+
   code_analisys:
     image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
     project_key: sonar:pythontest
