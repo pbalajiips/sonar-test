@@ -20,12 +20,12 @@ pipeline:
     secrets: [sonar_token]
 
 
-  # code_analisys:
-  #   image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
-  #   project_key: sonar:pythontest
-  #   sources_directory: python2.7
-  #   environment:
-  #     - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
+  code_analisys:
+    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
+    project_key: sonar:pythontest
+    sources_directory: python2.7
+    environment:
+      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
 
   # sonar:
   #   image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin
