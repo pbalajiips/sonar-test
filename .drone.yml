@@ -1,0 +1,21 @@
+pipeline:
+  code_analysis:
+    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
+    project_key: sonar:pythontest
+    sources_directory: python
+    environment:
+      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
+
+  sonar_for_cs:
+    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin
+    project_key: sonar:cstest
+    sources_directory: cs
+    environment:
+      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
+
+  sonar_for_ex:
+    image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin
+    project_key: sonar:elixirttest
+    sources_directory: elixir
+    environment:
+      - SONAR_HOST=https://sonar.tools-aqchca.walmartdigital.cl
